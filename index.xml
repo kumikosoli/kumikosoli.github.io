@@ -55,13 +55,21 @@
 &lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; &lt;strong&gt;Project0&lt;/strong&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;2025330&#34;&gt;2025/3/30
-&lt;/h2&gt;&lt;p&gt;整天呆在宿舍，但是只完成Project0收尾+一个Lecture+一个lab，该检讨自己的学习态度了……原因主要是刷手机和突然出现的聊天热潮（看来自己没想象中那么不受欢迎）。&lt;/p&gt;
+&lt;/h2&gt;&lt;p&gt;整天呆在宿舍，但是只完成Project0收尾+一个Lecture+一个lab，该检讨自己的学习态度了……原因主要是刷手机和突然出现的聊天热潮（看来自己没想象中那么不受欢迎）。尝试用 hugo 和 github page 部署自己的博客，未成功。&lt;/p&gt;
 &lt;h3 id=&#34;进行事项-3&#34;&gt;进行事项
 &lt;/h3&gt;&lt;ul&gt;
 &lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; &lt;strong&gt;Project0&lt;/strong&gt;&lt;/li&gt;
 &lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; &lt;strong&gt;Lecture3&lt;/strong&gt;&lt;/li&gt;
 &lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; &lt;strong&gt;Lab2&lt;/strong&gt;&lt;/li&gt;
 &lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; &lt;strong&gt;配好了CS61b需要的环境&lt;/strong&gt; (感谢Github Desktop)&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; &lt;strong&gt;部署自己的博客&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;2005331&#34;&gt;2005/3/31
+&lt;/h2&gt;&lt;p&gt;用中午和晚上公选时间看完一个lecture，感觉前面的内容过于基础没学到什么……同时耗费大量时间把个人博客部署好了，但是还没开始设置，简单地把文档放上去就结束了……&lt;/p&gt;
+&lt;h3 id=&#34;进行事项-4&#34;&gt;进行事项
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; &lt;strong&gt;Lecture4&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; &lt;strong&gt;部署个人博客&lt;/strong&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
         </item>

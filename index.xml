@@ -20,7 +20,15 @@
 &lt;li&gt;java中，除八种基本类型外，其他类型都是作为引用被初始化,引用变量存储的是指向结构的地址&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;使用junit进行test&#34;&gt;使用junit进行test
-&lt;/h2&gt;&lt;h2 id=&#34;链表linklist&#34;&gt;链表Linklist
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;使用&lt;code&gt;org.junit.Assert.assertArrayEquals(expected,input)&lt;/code&gt;验证输入与期望的数组是否相等&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;debug工具&#34;&gt;Debug工具
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;conditional breakpoint:条件断点，当且仅当在该断点处满足条件为True时才会停止&lt;/li&gt;
+&lt;li&gt;resume:恢复程序，使程序继续运行直到回到断点&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;链表linklist&#34;&gt;链表Linklist
 &lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;nested class：嵌套类，在类中定义一个类。在list类中定义node类，把初始化的list作为头节点。&lt;/p&gt;
@@ -92,14 +100,6 @@
   &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;使用&lt;code&gt;org.junit.Assert.assertArrayEquals(expected,input)&lt;/code&gt;验证输入与期望的数组是否相等&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;其他&#34;&gt;其他
-&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;java作为参数的数组均为引用，可改变数组的值&lt;/li&gt;
-&lt;li&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
         </item>

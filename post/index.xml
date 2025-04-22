@@ -244,6 +244,13 @@
 &lt;/div&gt;&lt;h3 id=&#34;equals&#34;&gt;equals
 &lt;/h3&gt;&lt;p&gt;默认对比两个对象地址是否相同（等价于&lt;code&gt;==&lt;/code&gt;），返回True/False.
 通过重写可以比较对象不同的属性。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h1 id=&#34;data-structure-部分&#34;&gt;Data Structure 部分
+&lt;/h1&gt;&lt;h2 id=&#34;时间复杂度&#34;&gt;时间复杂度
+&lt;/h2&gt;&lt;h3 id=&#34;θfn&#34;&gt;$Θ(f(n))$
+&lt;/h3&gt;&lt;p&gt;代表时间复杂度与 $f(n)$ 同阶&lt;/p&gt;
+&lt;h3 id=&#34;ofn&#34;&gt;$O(f(n))$
+&lt;/h3&gt;&lt;p&gt;代表时间复杂度与 $f(n)$ 同阶或更低阶&lt;/p&gt;
 </description>
         </item>
         <item>

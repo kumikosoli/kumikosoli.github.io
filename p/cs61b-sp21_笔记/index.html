@@ -302,6 +302,7 @@
     <li><a href="#引用">引用</a></li>
     <li><a href="#使用junit进行test">使用junit进行test</a></li>
     <li><a href="#debug工具">Debug工具</a></li>
+    <li><a href="#files">files</a></li>
     <li><a href="#链表linklist">链表Linklist</a></li>
     <li><a href="#类继承">类继承</a>
       <ol>
@@ -341,6 +342,83 @@
       <ol>
         <li><a href="#θfn">$Θ(f(n))$</a></li>
         <li><a href="#ofn">$O(f(n))$</a></li>
+      </ol>
+    </li>
+    <li><a href="#抽象数据类型adt">抽象数据类型(ADT)</a>
+      <ol>
+        <li><a href="#常见adt">常见ADT</a>
+          <ol>
+            <li><a href="#stacks">Stacks</a></li>
+          </ol>
+        </li>
+        <li><a href="#lists">Lists</a>
+          <ol>
+            <li><a href="#操作-1">操作</a></li>
+            <li><a href="#sets-1">Sets</a></li>
+            <li><a href="#maps">Maps</a></li>
+            <li><a href="#操作-3">操作</a></li>
+          </ol>
+        </li>
+      </ol>
+    </li>
+    <li><a href="#不相交集disjoint-set">不相交集(disjoint set)</a>
+      <ol>
+        <li><a href="#基本功能">基本功能</a></li>
+        <li><a href="#实现方法">实现方法</a></li>
+      </ol>
+    </li>
+    <li><a href="#二叉搜索树binary-search-trees">二叉搜索树（Binary Search Trees）</a>
+      <ol>
+        <li><a href="#满足性质">满足性质</a></li>
+        <li><a href="#定义">定义</a></li>
+        <li><a href="#操作-4">操作</a></li>
+        <li><a href="#时间复杂度-1">时间复杂度</a></li>
+        <li><a href="#树的遍历">树的遍历</a></li>
+      </ol>
+    </li>
+    <li><a href="#b-树">B-树</a>
+      <ol>
+        <li><a href="#操作-5">操作</a></li>
+        <li><a href="#时间复杂度-2">时间复杂度</a></li>
+      </ol>
+    </li>
+    <li><a href="#红黑树">红黑树</a>
+      <ol>
+        <li><a href="#性质左倾红黑树">性质(左倾红黑树)</a></li>
+        <li><a href="#操作-6">操作</a></li>
+        <li><a href="#时间复杂度-3">时间复杂度</a></li>
+      </ol>
+    </li>
+    <li><a href="#哈希表">哈希表</a>
+      <ol>
+        <li><a href="#操作-7">操作</a></li>
+        <li><a href="#字符串to整型-存储">字符串to整型 存储</a></li>
+        <li><a href="#hash-codes">Hash Codes</a>
+          <ol>
+            <li><a href="#性质">性质</a></li>
+          </ol>
+        </li>
+        <li><a href="#哈希冲突">哈希冲突</a>
+          <ol>
+            <li><a href="#链地址法">链地址法</a></li>
+            <li><a href="#时间复杂度链地址法">时间复杂度（链地址法）</a></li>
+            <li><a href="#时间复杂度处理">时间复杂度处理</a></li>
+          </ol>
+        </li>
+      </ol>
+    </li>
+    <li><a href="#堆与优先队列">堆与优先队列</a>
+      <ol>
+        <li><a href="#性质-1">性质</a></li>
+        <li><a href="#操作-8">操作</a></li>
+        <li><a href="#实现方法-1">实现方法</a></li>
+        <li><a href="#时间复杂度-4">时间复杂度</a></li>
+      </ol>
+    </li>
+    <li><a href="#图graphs">图(Graphs)</a></li>
+    <li><a href="#图论问题">图论问题</a>
+      <ol>
+        <li><a href="#连通性问题">连通性问题</a></li>
       </ol>
     </li>
   </ol>
@@ -399,7 +477,7 @@
 
 
                 <time class="article-time--reading">
-                    阅读时长: 4 分钟
+                    阅读时长: 11 分钟
                 </time>
             </div>
         
@@ -437,6 +515,9 @@
 <li>conditional breakpoint:条件断点，当且仅当在该断点处满足条件为True时才会停止</li>
 <li>resume:恢复程序，使程序继续运行直到回到断点</li>
 </ul>
+<h2 id="files">files
+</h2><p>通过File constructor,可以在Java中生成file对象<code>File f = new File(&quot;dummy.txt&quot;);</code>这并不会实际创造文件dummy.txt。要生成时可以使用<code>f.createNewFile();</code>。可以用<code>f.exists()</code>检测文件是否存在。
+file对象也可以代表文件目录。要生成该目录时使用<code>d.mkdir()</code></p>
 <h2 id="链表linklist">链表Linklist
 </h2><ul>
 <li>
@@ -652,7 +733,427 @@
 </h3><p>代表时间复杂度与 $f(n)$ 同阶</p>
 <h3 id="ofn">$O(f(n))$
 </h3><p>代表时间复杂度与 $f(n)$ 同阶或更低阶</p>
-
+<h2 id="抽象数据类型adt">抽象数据类型(ADT)
+</h2><p>仅有操作而不由具体实现定义的数据类型。如Deque是一个ADT，可以由数组或者链表实现。不同的实现对应的操作是相同的。</p>
+<h3 id="常见adt">常见ADT
+</h3><h4 id="stacks">Stacks
+</h4><p>实现后进先出的数据类型</p>
+<h5 id="操作">操作
+</h5><ul>
+<li><code>push(int x)</code></li>
+<li><code>int pop()</code></li>
+</ul>
+<h3 id="lists">Lists
+</h3><p>有序列表</p>
+<h4 id="操作-1">操作
+</h4><ul>
+<li><code>add(int i)</code></li>
+<li><code>int get(int i)</code></li>
+</ul>
+<h4 id="sets-1">Sets
+</h4><p>无序无重复元素集合</p>
+<h5 id="操作-2">操作
+</h5><ul>
+<li><code>add(int i)</code></li>
+<li><code>contains(int i)</code></li>
+</ul>
+<h4 id="maps">Maps
+</h4><p>键值对集合</p>
+<h4 id="操作-3">操作
+</h4><ul>
+<li><code>put(k key,V value)</code></li>
+<li><code>V get(K key)</code></li>
+</ul>
+<h2 id="不相交集disjoint-set">不相交集(disjoint set)
+</h2><p>用于在一个无重复元素集合中跟踪两个元素是否在同一个集合中，以及合并两个元素所在的集合。</p>
+<h3 id="基本功能">基本功能
+</h3><ul>
+<li><code>connect(x, y)</code> 合并x y 所在的集合</li>
+<li><code>isConnected(x, y)</code>当x,y在同一个集合中时，返回<code>true</code>，否则返回<code>false</code></li>
+</ul>
+<h3 id="实现方法">实现方法
+</h3><ul>
+<li>
+<p>使用n个元素数组arr存储元素0 ~ n-1的父元素，当元素没有父元素时，这个元素为根，数组下标对应的值为-k(k为根对应的集合下元素数量).</p>
+</li>
+<li>
+<p><code>connect(x, y)</code>:对x,y向上遍历，找到x和y分别对应的根，并将根链接。</p>
+</li>
+<li>
+<p><code>isConnected(x, y)</code>：对x，y向上遍历，查看x和y对应的根节点是否相同</p>
+</li>
+<li>
+<p><strong>加权快速联合</strong>:每次调用<code>connect(x, y)</code>时，把集合元素较少的根的父元素改为另一个根，并修改另一个根存储的集合元素数量.</p>
+</li>
+<li>
+<p><strong>路径压缩</strong>：每次调用<code>isConnected(x, y)</code>时，将遍历到的节点的父元素全部变为根节点。</p>
+</li>
+</ul>
+<p><strong>使用加权快速联合和路径压缩下的操作时间复杂度</strong></p>
+<div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th style="text-align: center">Constructor</th>
+          <th style="text-align: center">connect</th>
+          <th style="text-align: center">isConnected</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: center">Θ(N)</td>
+          <td style="text-align: center">O(log* N)</td>
+          <td style="text-align: center">O(log* N)</td>
+      </tr>
+  </tbody>
+</table></div>
+<h2 id="二叉搜索树binary-search-trees">二叉搜索树（Binary Search Trees）
+</h2><p>包含节点（存储值与指向左右子节点的边）</p>
+<h3 id="满足性质">满足性质
+</h3><ol>
+<li>左子树所有键值小于其根节点键值</li>
+<li>右子树所有键值大于其根节点键值</li>
+<li>左、右子树都是二叉搜索树</li>
+</ol>
+<h3 id="定义">定义
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">private</span><span class="w"> </span><span class="kd">class</span> <span class="nc">BST</span><span class="o">&lt;</span><span class="n">Key</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">Key</span><span class="w"> </span><span class="n">key</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">BST</span><span class="w"> </span><span class="n">left</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">BST</span><span class="w"> </span><span class="n">right</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">BST</span><span class="p">(</span><span class="n">Key</span><span class="w"> </span><span class="n">key</span><span class="p">,</span><span class="w"> </span><span class="n">BST</span><span class="w"> </span><span class="n">left</span><span class="p">,</span><span class="w"> </span><span class="n">BST</span><span class="w"> </span><span class="n">Right</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">key</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">key</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">left</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">left</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">right</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">right</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">BST</span><span class="p">(</span><span class="n">Key</span><span class="w"> </span><span class="n">key</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">key</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">key</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="操作-4">操作
+</h3><ul>
+<li><code>static BST find(BST T, Key sk)</code></li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">static</span><span class="w"> </span><span class="n">BST</span><span class="w"> </span><span class="nf">find</span><span class="p">(</span><span class="n">BST</span><span class="w"> </span><span class="n">T</span><span class="p">,</span><span class="w"> </span><span class="n">Key</span><span class="w"> </span><span class="n">sk</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">   </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">T</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="kc">null</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">   </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">sk</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="n">T</span><span class="p">.</span><span class="na">key</span><span class="p">))</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="n">T</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">   </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">sk</span><span class="w"> </span><span class="err">≺</span><span class="w"> </span><span class="n">T</span><span class="p">.</span><span class="na">key</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="n">find</span><span class="p">(</span><span class="n">T</span><span class="p">.</span><span class="na">left</span><span class="p">,</span><span class="w"> </span><span class="n">sk</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">   </span><span class="k">else</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="n">find</span><span class="p">(</span><span class="n">T</span><span class="p">.</span><span class="na">right</span><span class="p">,</span><span class="w"> </span><span class="n">sk</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li><code>static BST insert(BST T, Key ik)</code></li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">static</span><span class="w"> </span><span class="n">BST</span><span class="w"> </span><span class="nf">insert</span><span class="p">(</span><span class="n">BST</span><span class="w"> </span><span class="n">T</span><span class="p">,</span><span class="w"> </span><span class="n">Key</span><span class="w"> </span><span class="n">ik</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">T</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="kc">null</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">BST</span><span class="p">(</span><span class="n">ik</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ik</span><span class="w"> </span><span class="err">≺</span><span class="w"> </span><span class="n">T</span><span class="p">.</span><span class="na">key</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">T</span><span class="p">.</span><span class="na">left</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">insert</span><span class="p">(</span><span class="n">T</span><span class="p">.</span><span class="na">left</span><span class="p">,</span><span class="w"> </span><span class="n">ik</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ik</span><span class="w"> </span><span class="err">≻</span><span class="w"> </span><span class="n">T</span><span class="p">.</span><span class="na">key</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">T</span><span class="p">.</span><span class="na">right</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">insert</span><span class="p">(</span><span class="n">T</span><span class="p">.</span><span class="na">right</span><span class="p">,</span><span class="w"> </span><span class="n">ik</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">T</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li><code>static void Delete(key ik)</code>
+删除一个节点需要考虑节点孩子的情况。</li>
+</ul>
+<ol>
+<li>
+<p>没有孩子节点：直接删除节点</p>
+</li>
+<li>
+<p>一个孩子节点：让父节点指向被删除节点的边指向被删除节点的孩子节点</p>
+</li>
+<li>
+<p>两个孩子节点：找到左子树最大/右子树最小的节点，交换其与被删除节点的值，然后删除交换后的节点。</p>
+</li>
+</ol>
+<h3 id="时间复杂度-1">时间复杂度
+</h3><p>各个操作，平均时间复杂度、最好时间复杂度为$O(log n)$,最坏情况时间复杂度为$O(n)$.</p>
+<h3 id="树的遍历">树的遍历
+</h3><ol>
+<li>层序遍历 (Level order traversal)
+从树的根开始从上到下，从左到右遍历。方法：通过队列把当前节点的子节点加入队列中实现。</li>
+<li>深度优先遍历（DFS）
+<ol>
+<li>前序遍历 (pre-order)
+先访问左子树，再处理当前节点，再处理右子树</li>
+<li>中序遍历 (in-order)
+先处理当前节点，再访问左子树，再处理右子树</li>
+<li>后序遍历 (post-order)
+先访问左子树，再处理右子树，再处理当前节点</li>
+</ol>
+</li>
+</ol>
+<h2 id="b-树">B-树
+</h2><p>一种平衡树。每个节点可以拥有m个元素，m+1个儿子节点。m=2时称为2-3树；m=3时称为2-3-4树。第k个子节点中的元素大于第k-1个元素，小于第k个元素。</p>
+<h3 id="操作-5">操作
+</h3><ul>
+<li>find()
+类似二叉搜索树。</li>
+<li>insert()
+把新元素插入到已有节点中。若插入后节点元素多于限制数，（对于2-3-4树）把第二个元素作为该节点</li>
+<li>delete()</li>
+</ul>
+<h3 id="时间复杂度-2">时间复杂度
+</h3><p>查找、插入和删除操作的时间复杂度为稳定$O(log n)$量级。</p>
+<h2 id="红黑树">红黑树
+</h2><ul>
+<li>前置知识：通过旋转保持树的平衡。</li>
+</ul>
+<ol>
+<li>左旋：将某个节点的右子树提升为新的根节点，并将原根节点变为其左子树。原根节点的右指针指向右孩子的左子树。</li>
+<li>右旋：将某个节点的左子树提升为新的根节点，并将原根节点变为其右子树。原根节点的左指针指向左孩子的右子树。</li>
+</ol>
+<h3 id="性质左倾红黑树">性质(左倾红黑树)
+</h3><ol>
+<li>与2-3树一一对应。</li>
+<li>没有节点拥有2个红色边</li>
+<li>没有红色向右的边</li>
+<li>每条从树叶到根的路径中，黑色边的数量一致。</li>
+<li>高度不高于对应2-3树的两倍</li>
+</ol>
+<h3 id="操作-6">操作
+</h3><ul>
+<li>find()
+类似二叉搜索树。</li>
+<li>insert()
+把新元素插入到已有节点中。</li>
+</ul>
+<ol>
+<li>插入时使用一条红色边。</li>
+<li>当对应的2-3树出现“节点有第三个元素”时，左旋对应节点修复违反规则的链接。</li>
+<li>当出现两个连续的黑色边时，右旋修复。</li>
+<li>当出现一个节点连着两条左倾红色边时，让该节点连着的所有边颜色调转。
+<strong>伪代码实现：</strong></li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">private</span><span class="w"> </span><span class="n">Node</span><span class="w"> </span><span class="nf">put</span><span class="p">(</span><span class="n">Node</span><span class="w"> </span><span class="n">h</span><span class="p">,</span><span class="w"> </span><span class="n">Key</span><span class="w"> </span><span class="n">key</span><span class="p">,</span><span class="w"> </span><span class="n">Value</span><span class="w"> </span><span class="n">val</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">h</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="kc">null</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Node</span><span class="p">(</span><span class="n">key</span><span class="p">,</span><span class="w"> </span><span class="n">val</span><span class="p">,</span><span class="w"> </span><span class="n">RED</span><span class="p">);</span><span class="w"> </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">cmp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">key</span><span class="p">.</span><span class="na">compareTo</span><span class="p">(</span><span class="n">h</span><span class="p">.</span><span class="na">key</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">cmp</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">0</span><span class="p">)</span><span class="w">      </span><span class="p">{</span><span class="w"> </span><span class="n">h</span><span class="p">.</span><span class="na">left</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="n">put</span><span class="p">(</span><span class="n">h</span><span class="p">.</span><span class="na">left</span><span class="p">,</span><span class="w">  </span><span class="n">key</span><span class="p">,</span><span class="w"> </span><span class="n">val</span><span class="p">);</span><span class="w"> </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">cmp</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">h</span><span class="p">.</span><span class="na">right</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">put</span><span class="p">(</span><span class="n">h</span><span class="p">.</span><span class="na">right</span><span class="p">,</span><span class="w"> </span><span class="n">key</span><span class="p">,</span><span class="w"> </span><span class="n">val</span><span class="p">);</span><span class="w"> </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">else</span><span class="w">              </span><span class="p">{</span><span class="w"> </span><span class="n">h</span><span class="p">.</span><span class="na">val</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="n">val</span><span class="p">;</span><span class="w">                    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">isRed</span><span class="p">(</span><span class="n">h</span><span class="p">.</span><span class="na">right</span><span class="p">)</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="o">!</span><span class="n">isRed</span><span class="p">(</span><span class="n">h</span><span class="p">.</span><span class="na">left</span><span class="p">))</span><span class="w">      </span><span class="p">{</span><span class="w"> </span><span class="n">h</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">rotateLeft</span><span class="p">(</span><span class="n">h</span><span class="p">);</span><span class="w">  </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">isRed</span><span class="p">(</span><span class="n">h</span><span class="p">.</span><span class="na">left</span><span class="p">)</span><span class="w">  </span><span class="o">&amp;&amp;</span><span class="w">  </span><span class="n">isRed</span><span class="p">(</span><span class="n">h</span><span class="p">.</span><span class="na">left</span><span class="p">.</span><span class="na">left</span><span class="p">))</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">h</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">rotateRight</span><span class="p">(</span><span class="n">h</span><span class="p">);</span><span class="w"> </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">isRed</span><span class="p">(</span><span class="n">h</span><span class="p">.</span><span class="na">left</span><span class="p">)</span><span class="w">  </span><span class="o">&amp;&amp;</span><span class="w">  </span><span class="n">isRed</span><span class="p">(</span><span class="n">h</span><span class="p">.</span><span class="na">right</span><span class="p">))</span><span class="w">     </span><span class="p">{</span><span class="w"> </span><span class="n">flipColors</span><span class="p">(</span><span class="n">h</span><span class="p">);</span><span class="w">      </span><span class="p">}</span><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">h</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>delete()</li>
+</ul>
+<h3 id="时间复杂度-3">时间复杂度
+</h3><p>查找、插入和删除操作的时间复杂度为稳定$O(log n)$量级。(实现易于B-树，实际中更常用)</p>
+<h2 id="哈希表">哈希表
+</h2><p>把输入的元素通过哈希函数转化为整型数字后，将该数字作为数组下标存储到数组中。可以判断表中是否存在某元素。</p>
+<p>存储的数据不需要具有可比较性</p>
+<h3 id="操作-7">操作
+</h3><ol>
+<li><code>add()</code> 把元素加入到哈希表中。</li>
+<li><code>contain()</code> 判断元素是否在哈希表中。</li>
+</ol>
+<h3 id="字符串to整型-存储">字符串to整型 存储
+</h3><p>若存在n个可用字符，我们可以对这n个字符编号为1，2……n,t为字符编号。对于长度为m的字符串，我们可以使用公式 $N = \sum_{k=1}^m tn^{k-1}$ 计算字符对应的整形值，保证每个字符对应的整形值相同。</p>
+<p>由于整型存在最大存储值上限2147483647，无法用整形表示所有字符串。</p>
+<p>因此，不同字符串可能拥有相同的哈希值，导致哈希冲突。</p>
+<h3 id="hash-codes">Hash Codes
+</h3><p>可以把计算得到的整型数字取余数减小哈希表大小。（余数为质数时更好避免哈希冲突）
+java中object存在<code>.hashcode()</code>方法，为对象计算哈希值。我们同样也可以重写这个函数。</p>
+<h4 id="性质">性质
+</h4><ol>
+<li>必须为整型</li>
+<li>对同一个对象多次调用必须返回相同值</li>
+<li>两个对象只有当哈希值相同时才能被认为<code>.equals()</code></li>
+</ol>
+<h3 id="哈希冲突">哈希冲突
+</h3><h4 id="链地址法">链地址法
+</h4><p>哈希表中每个元素都是一个链表，把哈希值相同的元素都加入到该链表中。（由于哈希表不允许重复元素，需要先判断元素是否存在于表中）。</p>
+<h4 id="时间复杂度链地址法">时间复杂度（链地址法）
+</h4><p>Q:元素链表中的元素个数</p>
+<ol>
+<li><code>add()</code>  $Θ(Q)$ 使用动态数组后变为$Θ(1)$</li>
+<li><code>contain()</code> $Θ(Q)$ 使用动态数组后变为$Θ(1)$</li>
+</ol>
+<h4 id="时间复杂度处理">时间复杂度处理
+</h4><p>为了防止链表过长降低时间复杂度</p>
+<ol>
+<li>改进哈希函数使元素尽量均匀分布</li>
+<li>动态增大数组大小（当 $M = 存储元素数/数组长度$ ）
+,M大于一定值时创建大小为2倍的数组，并把旧的哈希表中的数据重新加入新的哈希表（可能导致存储位置的改变）。
+改变数组大小的时间复杂度 $Θ(N)$。</li>
+</ol>
+<h2 id="堆与优先队列">堆与优先队列
+</h2><p>类似于二叉搜索树，但是每次只能获取或者移除堆中最大/最小的元素。
+下面以最小堆为例子。</p>
+<h3 id="性质-1">性质
+</h3><ol>
+<li>完全性： 只有最底层的节点有元素缺失，所有元素都尽可能存在于左边。</li>
+<li>最小堆性质： 所有节点值都不大于其父节点</li>
+</ol>
+<h3 id="操作-8">操作
+</h3><ol>
+<li><code>public void add(Item x)</code> 在优先队列中加入元素</li>
+<li><code>public Item getSmallest()</code> 获取最小元素</li>
+<li>`public Item getSmallest() 移除最小元素</li>
+<li><code>public int size()</code> 返回优先队列大小</li>
+</ol>
+<h3 id="实现方法-1">实现方法
+</h3><p>使用数组<code>keys[]</code>存储优先队列。从下标1开始按序存储元素。可以得到<code>leftChild(k)</code>=k∗2 <code>rightChild(k)</code>=k∗2+1 <code>parent(k)</code>=k/2.
+数组需要动态改变大小。</p>
+<ol>
+<li><code>public void add(Item x)</code> 在优先队列中加入元素到堆的最后，然后让元素上浮直到满足堆性质。</li>
+<li><code>public Item getSmallest()</code> 返回堆的根节点元素</li>
+<li><code>public Item removeSmallest()</code> 把根节点元素的值变为堆的最后一个元素，删除堆的最后一个元素。把根节点元素下沉到满足性质的位置。</li>
+</ol>
+<p>辅助函数<code>public void swim(int k)</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="c1">// 使k节点从下到上移动，满足堆性质</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">swim</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">k</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">keys</span><span class="o">[</span><span class="n">parent</span><span class="p">(</span><span class="n">k</span><span class="p">)</span><span class="o">]</span><span class="w"> </span><span class="err">≻</span><span class="w"> </span><span class="n">keys</span><span class="o">[</span><span class="n">k</span><span class="o">]</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">       </span><span class="n">swap</span><span class="p">(</span><span class="n">k</span><span class="p">,</span><span class="w"> </span><span class="n">parent</span><span class="p">(</span><span class="n">k</span><span class="p">));</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">       </span><span class="n">swim</span><span class="p">(</span><span class="n">parent</span><span class="p">(</span><span class="n">k</span><span class="p">));</span><span class="w">              
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="时间复杂度-4">时间复杂度
+</h3><div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th style="text-align: center">add(Item x)</th>
+          <th style="text-align: center">getSmallest()</th>
+          <th style="text-align: center">getSmallest()</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: center">$Θ(log N)$</td>
+          <td style="text-align: center">$Θ(1)$</td>
+          <td style="text-align: center">$Θ(log N)$</td>
+      </tr>
+  </tbody>
+</table></div>
+<h2 id="图graphs">图(Graphs)
+</h2><p><strong>图</strong>：包括一系列节点，一系列连接两个节点的边。</p>
+<p><strong>简单图(Simple Graphs)</strong>：任意两条边连接的节点不完全相同。一条边不能连接一个节点到它本身。</p>
+<p><strong>无向图(undirected graphs)</strong>：边没有方向</p>
+<p><strong>有向图(directed graphs)</strong>：边有方向</p>
+<p><strong>无环图(acyclic graphs)</strong>: 图中没有环。即不存在能从一个节点出发，最终到达同一个节点的路径。</p>
+<p><strong>有环图(cyclic graphs)</strong>：图中存在环。</p>
+<h2 id="图论问题">图论问题
+</h2><h3 id="连通性问题">连通性问题
+</h3><p>判断是否存在链接节点s,t的路径。使用深度优先遍历（DFS）。
+用一个数组mark遍历过的节点。mark下当前节点后进入相邻的下一个节点。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">s</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">t</span><span class="p">):</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">for</span><span class="w"> </span><span class="n">child</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="nf">unmarked_neighbors</span><span class="p">(</span><span class="n">s</span><span class="p">):</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="n">isconnected</span><span class="p">(</span><span class="n">child</span><span class="p">,</span><span class="w"> </span><span class="n">t</span><span class="p">):</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">return</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div>
 </section>
 
 
